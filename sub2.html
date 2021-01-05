@@ -1,0 +1,333 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아름다운 커피</title>
+    <link rel="shortcut icon" href="img/fava7.ico" type="image/x-icon">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.js"></script>
+    <script>
+        $(document).ready(function(e) {
+            $('#menu>li>a').on('click', function(e) {
+                e.preventDefault();
+                $('html, body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 1000);
+                return false;
+            });
+        });
+
+    </script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    mobile_menu();
+});
+
+function mobile_menu(){
+    /* 변수 선언 */
+    var $menu = null;
+    var $left_gnb = null; // 영역 전체
+    var $depth1_wrap = null;
+    var $depth1 = null;
+    var $depth1_btn = null;
+    
+    /* 시작 함수 */
+    function start(){
+        init();
+        init_event();
+    }
+    /* 변수 초기화 함수 */
+    function init(){
+        $menu = $('.mmenu');
+        $left_gnb = $('.left_gnbWrap'); // 영역 전체
+        $depth1_wrap = $('.left_gnb>li');
+        $depth1 = $depth1_wrap.children('ul');
+        $depth1_btn = $depth1_wrap.children('a');
+    }
+    /* 이벤트 함수 */
+    function init_event(){
+        
+        /* 모바일 메뉴 버튼 클릭했을때 모바일 메뉴영역 나오게 하기 */
+        $menu.click(function(event){
+            event.preventDefault();
+            $left_gnb.addClass('on');
+        });
+        
+        /* x버튼 눌렀을때 모바일 메뉴 닫기 */
+        $('.close').click(function(event){
+            event.preventDefault();
+
+            $left_gnb.removeClass('on');
+            
+            // x버튼 누르면 시간차 약간두고 소메뉴 닫히게 하기
+            setTimeout(function(){
+                $depth1_btn.removeClass('on');
+                $depth1.slideUp();
+            },300)
+        });
+        
+        /* depth1의 각메뉴 클릭시 depth2 나오게 하기 */
+        $depth1_btn.click(function(event){
+            event.preventDefault();
+            var $this = $(this);
+            var $this_ul = $this.siblings('ul');
+
+            var check = $this.hasClass('on');
+            if(check){
+                $this.removeClass('on');
+                $this_ul.stop(true,true).slideUp();
+            }else{
+                $depth1_btn.removeClass('on');
+                $depth1.stop().slideUp();
+                $this.addClass('on');
+                $this_ul.stop(true,true).slideDown();
+            }
+        });
+        
+        /* 디바이스 크기 변경시 모바일 메뉴영역 숨기기 */
+        $(window).resize(function(){
+            $left_gnb.removeClass('on');
+        });
+    }
+    
+    start(); // 시작 호출
+}
+</script>
+
+
+    <style>
+      
+
+        html,
+        body {
+            height: 100%
+        }
+        @media (max-width: 810px) {
+            
+            footer{height: 290px}
+        }
+       
+    </style>
+</head>
+
+<body>
+     <!--공통헤더시작-->
+       <header>
+            <div class="logo">
+                <a href="index.html"> <img src="img/main_0rr3.png" alt="헤더로고"></a>
+            </div>
+
+            <div class="menu">
+<nav id="nav34">
+        <ul class="depth1">
+            <li><a href="sub2.html">공정무역</a>
+               
+            </li>
+            <li><a href="sub.html">생산자</a>
+                
+            </li>
+            <li><a href="sub3.html">커피</a>
+                
+            </li>
+            <li><a href="index.html">아름다운 커피</a>
+            </li>
+            
+        </ul>
+
+    </nav>
+            </div>
+
+
+            <div class="mmenu">
+                <a href="#"><img src="img/ham.png" alt="햄버거"></a>
+            </div>
+            <nav class="left_gnbWrap">
+            <a href="#" class="close">닫기</a>
+            <ul class="left_gnb">
+                <li>
+                    <a href="#">공정무역</a>
+                    <ul>
+                        <li><a href="sub2.html">커피교육</a></li>
+                        <li><a href="sub2.html">공정무역교육</a></li>
+                    </ul>
+                </li>
+                <li>
+                        <a href="#">생산자</a>
+                        <ul>
+                            <li><a href="sub.html">파트너십</a></li>
+                            <li><a href="sub.html">라떼해</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li>
+                        <a href="#">커피</a>
+                        <ul>
+                            <li><a href="sub3.html">홀빈</a></li>
+                            <li><a href="sub3.html">분쇄</a></li>
+                            <li><a href="sub3.html">콜드브루</a></li>
+                        </ul>
+                    </li>
+                <li>
+                    <a href="index.html">아름다운 커피</a>
+                   
+                </li>
+                
+                <li class="liget">
+                   <h3>GET IN TOUCH</h3>
+                        <p>help@beautifulcoffee.com<br>TEL : 02-743-1004 <br> FAX : 02-743-1773</p>
+                        <div class="ligetdiv"><a href="index.html">아름다운 커피와 함께하기</a></div>
+                   
+                </li>
+                
+                
+            </ul>
+        </nav>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <!--clear both-->
+        </header>
+      <!--공통헤더끝-->
+      
+       
+       <!-- 서브3시작-->
+       
+       <nav class="nav1">
+        <ul id="s3_menu">
+            <li><a href="#sub_3_box1">#Coffee for Nepal</a></li>
+            <li><a href="#sub_3_box2">공정무역교실</a></li>
+            <li><a href="#sub_3_box3">커피 한 잔</a></li>
+            <li><a href="#sub_3_box4">아름다운커피 유니온</a></li>
+        </ul>
+        <div class="top111"><a href="#sub_3_box1">▲</a></div>
+    </nav>
+
+    <section id="sub_3_box1">
+        <div class="sub2_box1">
+            <h2>#Coffee for Nepal </h2>
+            <p>커피,<br> 누군가에게는 미래<br>
+                네팔 굴미커피협동조합 커피농부 로크나트 씨</p>
+            <div class="linkk">커피농부의 이야기</div>
+        </div>
+    </section>
+    <section id="sub_3_box2">
+       <div class="sub_3_box2_1">
+      
+        <h2> <i><img src="img/cp_logo1.png"></i>참여 현황</h2>
+        <div class="icon_set">
+            <div class="icon_set1">
+                <div class="icon_set2_1"></div><p>교육 기관수<br>
+843곳</p>
+            </div>
+            <div class="icon_set2">
+                <div class="icon_set2_2"></div><p>교육 참여자 수
+<br>45,867명
+</p>
+            </div>
+            
+        </div><div class="sub_3_box2_1_1">참여하기</div></div>
+    </section>
+    <section id="sub_3_box3">
+        <h2>여러분이 드시는<br> 공정무역 커피 한 잔이<br> 커피 농부들의 삶이자 희망입니다</h2>
+    </section>
+    <section id="sub_3_box4">
+        <div class="sub2_box4_left">
+            <div class="sub2_box4_left2">
+                <h2>아름다운커피 유니온<br>(Beautiful Coffee UNION)</h2>
+                <p>내가 운영하는 카페에서 공정무역 커피를 사용한다면? <br>
+
+                    카페의 개성을 살리되 공정무역으로 함께 무언가를 하고 싶다면? <br>
+
+                    아름다운커피 유니온(BeautifulCoffee UNION)에 참여하세요. </p>
+                <div class="sb4b">자세히보기</div>
+            </div>
+        </div>
+        <div class="sub2_box4_right"></div>
+    </section>
+
+<!-- 서브3끝-->
+
+<!--공통푸터시작-->
+
+<footer>
+            <div class="inner">
+                <div class="topfooter">
+
+                    <div class="f_logo">
+                        <img src="img/main_22.png" alt="푸터로고">
+                    </div>
+                    <div class="copy1">
+                        <h3>GET IN TOUCH</h3>
+                        <p>서울시 은평구 통일로 684, 1동 4층 406호(녹번동5)<br>대표번호 : 02-743-1004 / FAX : 02-743-1773</p>
+                    </div>
+                    <select class="Language">
+                        <option>Language</option>
+                        <option>English</option>
+                        <option>Japanese</option>
+                        <option>Chinese</option>
+                    </select>
+                    <!--clear both-->
+                </div>
+
+                <div class="botfooter">
+
+                    <div class="f_btn">아름다운 커피와 함께 하기</div>
+                    <p>Copyright (c) by 아름다운커피 All Right Reserved.</p>
+                    <!--clear both-->
+                </div>
+            </div>
+        </footer>
+
+
+
+<!--공통푸터끝-->
+
+</body>
+
+</html>

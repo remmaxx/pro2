@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아름다운 커피</title>
+    <link rel="shortcut icon" href="img/fava7.ico" type="image/x-icon">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    mobile_menu();
+});
+
+function mobile_menu(){
+    /* 변수 선언 */
+    var $menu = null;
+    var $left_gnb = null; // 영역 전체
+    var $depth1_wrap = null;
+    var $depth1 = null;
+    var $depth1_btn = null;
+    
+    /* 시작 함수 */
+    function start(){
+        init();
+        init_event();
+    }
+    /* 변수 초기화 함수 */
+    function init(){
+        $menu = $('.mmenu');
+        $left_gnb = $('.left_gnbWrap'); // 영역 전체
+        $depth1_wrap = $('.left_gnb>li');
+        $depth1 = $depth1_wrap.children('ul');
+        $depth1_btn = $depth1_wrap.children('a');
+    }
+    /* 이벤트 함수 */
+    function init_event(){
+        
+        /* 모바일 메뉴 버튼 클릭했을때 모바일 메뉴영역 나오게 하기 */
+        $menu.click(function(event){
+            event.preventDefault();
+            $left_gnb.addClass('on');
+        });
+        
+        /* x버튼 눌렀을때 모바일 메뉴 닫기 */
+        $('.close').click(function(event){
+            event.preventDefault();
+
+            $left_gnb.removeClass('on');
+            
+            // x버튼 누르면 시간차 약간두고 소메뉴 닫히게 하기
+            setTimeout(function(){
+                $depth1_btn.removeClass('on');
+                $depth1.slideUp();
+            },300)
+        });
+        
+        /* depth1의 각메뉴 클릭시 depth2 나오게 하기 */
+        $depth1_btn.click(function(event){
+            event.preventDefault();
+            var $this = $(this);
+            var $this_ul = $this.siblings('ul');
+
+            var check = $this.hasClass('on');
+            if(check){
+                $this.removeClass('on');
+                $this_ul.stop(true,true).slideUp();
+            }else{
+                $depth1_btn.removeClass('on');
+                $depth1.stop().slideUp();
+                $this.addClass('on');
+                $this_ul.stop(true,true).slideDown();
+            }
+        });
+        
+        /* 디바이스 크기 변경시 모바일 메뉴영역 숨기기 */
+        $(window).resize(function(){
+            $left_gnb.removeClass('on');
+        });
+    }
+    
+    start(); // 시작 호출
+}
+</script>
+
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header>
+            <div class="logo">
+                <a href="index.html"> <img src="img/main_0rr3.png" alt="헤더로고"></a>
+            </div>
+<div class="menu">
+          <nav id="nav34">
+        <ul class="depth1">
+            <li><a href="sub2.html">공정무역</a>
+                <ul class="ull1">
+                    <li><a href="sub2.html"  class="submenuLink">커피교육</a></li>
+                    <li><a href="sub2.html"  class="submenuLink">공정무역 교육</a></li>
+                </ul>
+            </li>
+            <li><a href="sub.html">생산자</a>
+                <ul class="ull1">
+                    <li class="submenuLink"><a href="sub.html" class="submenuLink">파트너십</a></li>
+                    <li class="submenuLink"><a href="sub.html" class="submenuLink">라떼해</a></li>
+                </ul>
+            </li>
+            <li><a href="sub3.html">커피</a>
+                <ul>
+                    <li><a href="sub3.html" class="submenuLink">홀빈</a></li>
+                        <li><a href="sub3.html" class="submenuLink">분쇄</a></li>
+                        <li><a href="sub3.html" class="submenuLink">콜드브루</a></li>
+
+                </ul>
+            </li>
+            <li><a href="index.html">아름다운 커피</a>
+            </li>
+            
+        </ul>
+
+    </nav>
+</div>
+
+            <div class="mmenu">
+                <a href="#"><img src="img/ham.png" alt="햄버거"></a>
+            </div>
+            <nav class="left_gnbWrap">
+            <a href="#" class="close">닫기</a>
+            <ul class="left_gnb">
+                <li>
+                    <a href="sub2.html">공정무역</a>
+                    <ul>
+                        <li><a href="sub2.html">커피교육</a></li>
+                        <li><a href="sub2.html">공정무역교육</a></li>
+                    </ul>
+                </li>
+               <li>
+                        <a href="sub.html">생산자</a>
+                        <ul>
+                            <li><a href="sub.html">파트너십</a></li>
+                            <li><a href="sub.html">라떼해</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li>
+                        <a href="sub3.html">커피</a>
+                        <ul>
+                            <li><a href="sub3.html">홀빈</a></li>
+                            <li><a href="sub3.html">분쇄</a></li>
+                            <li><a href="sub3.html">콜드브루</a></li>
+                        </ul>
+                    </li>
+                <li>
+                    <a href="index.html">아름다운 커피</a>
+                   
+                </li>
+                
+                <li class="liget">
+                   <h3>GET IN TOUCH</h3>
+                        <p>help@beautifulcoffee.com<br>TEL : 02-743-1004 <br> FAX : 02-743-1773</p>
+                        <div class="ligetdiv"><a href="index.html">아름다운 커피와 함께하기</a></div>
+                   
+                </li>
+                
+                
+            </ul>
+        </nav>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <!--clear both-->
+        </header>
+        <article>
+            <h1 class="hidden">메인이미지</h1>
+            <div class="main_text">
+                <h1>YES!<br>FAIR TRADE<br>COFFEE</h1>
+                <p>생산자와 소비자 모두가 만족하는 커피<br>답은 공정무역 커피입니다</p>
+            </div>
+            <div class="mtitle">
+                <h1>YES!<br>FAIR TRADE<br>COFFEE!</h1>
+                <p>생산자와 소비자 모두가 만족하는 커피<br>답은 공정무역 커피입니다</p>
+            </div>
+        </article>
+        <main>
+            <section class="box1">
+                <h2>빈곤을 심화시키는 무역을</h2>
+                <h2 class="hover_ho">빈곤을 해결하는 수단으로</h2>
+                <p>우리는 공정무역(Fair Trade)를 통해<br>빈곤을 심화시키고 있는 현재의 무역을<br>빈곤을 해결하는 수단으로 바꾸려고 합니다</p>
+                <div class="btn_set">
+                    <div class="btn">아름다운 커피 소개</div>
+                    <div class="btn">함께 하기</div>
+                </div>
+
+            </section>
+            <section class="box2">
+
+                <div class="box2_left">
+                    <img src="img/main_07.png" alt="퍼즐">
+                </div>
+                <div class="box2_right">
+                    <h2>세상을 바꾸는 1%가 된다</h2>
+                    <h4>Changing Trade to Change the World</h4>
+                    <p>우리는 대화의 존중에 기초한 파트너십을 통해 소외된 생산자들의 자립을 지원하고<br>윤리적 가치에 기반한 소비로 삶의 가치를 실현하는 기회를 제공하며,<br>다양한 시민들, 조직들과 함께 불평등한 무역구조와 사회관행에 문제를 제기합니다.<br><br>우리는 순수 공역무역 단체로서 무역을 통해 빈곤을 해결하고 인간의 존엄성을 회복하며<br>정의롭고 지속가능한 세계를 확산하고자 합니다.</p>
+                    <p class="phover">
+                        프로젝트 바로가기
+                    </p>
+                </div>
+                <!--clear both-->
+
+            </section>
+            <section class="box3">
+                <div class="inner">
+                    <h2>아름다운 커피의<br>가치와 행동 원칙</h2>
+                    <div class="box3_1">
+                        <i><img src="img/main_11.png" alt="아이콘1"></i>
+                        <h3 class="lasthover">소통</h3>
+                        <h4>(Understanding)</h4>
+                        <p>먼저 솔직해지고<br>상대방의 생각이나 욕구에 공감하도록 노력한다.</p>
+                    </div>
+                    <div class="box3_2">
+                        <i><img src="img/main_13.png" alt="아이콘2"></i>
+                        <h3 class="lasthover">효과성</h3>
+                        <h4>(Effectiveness)</h4>
+                        <p>같은 자원을 사용해서<br>최선의 결과를 얻도록 일한다.</p>
+                    </div>
+                    <div class="box3_3">
+                        <i><img src="img/main_17.png" alt="아이콘3"></i>
+                        <h3 class="lasthover">투명성</h3>
+                        <h4>(Transparency)</h4>
+                        <p>왼손이 하는 일을<br>온 몸이 알아도 문제 없게 한다.</p>
+                    </div>
+                    <div class="box3_4">
+                        <i><img src="img/main_18.png" alt="아이콘4"></i>
+                        <h3 class="lasthover">혁신</h3>
+                        <h4>(Innovation)</h4>
+                        <p>큰 생각을 하고, 다르게 접근하며,<br>새로운 것을 만들어낸다.</p>
+                    </div>
+                    <!--clear both-->
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="inner">
+                <div class="topfooter">
+
+                    <div class="f_logo">
+                        <img src="img/main_22.png" alt="푸터로고">
+                    </div>
+                    <div class="copy1">
+                        <h3>GET IN TOUCH</h3>
+                        <p>서울시 은평구 통일로 684, 1동 4층 406호(녹번동5)<br>대표번호 : 02-743-1004 / FAX : 02-743-1773</p>
+                    </div>
+                    <select class="Language">
+                        <option>Language</option>
+                        <option>English</option>
+                        <option>Japanese</option>
+                        <option>Chinese</option>
+                    </select>
+                    <!--clear both-->
+                </div>
+
+                <div class="botfooter">
+
+                    <div class="f_btn">아름다운 커피와 함께 하기</div>
+                    <p>Copyright (c) by 아름다운커피 All Right Reserved.</p>
+                    <!--clear both-->
+                </div>
+            </div>
+        </footer>
+    </div>
+</body></html>
