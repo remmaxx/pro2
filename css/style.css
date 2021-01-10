@@ -1818,6 +1818,187 @@ footer {
 
 
 
+/*서브5*/
+
+
+
+
+
+
+
+.submain5 {
+    width: 100%;
+    height: 898px;
+    background-image: url(../img/asdf_01.png);
+    background-repeat: no-repeat;
+    position: relative;
+    padding-top: 65px;
+    background-position: 0 bottom;
+    background-size: cover;
+
+}
+
+
+
+
+
+
+.sub5_box a {
+	color: #000;
+
+	text-decoration: none;
+	-webkit-transition: 0.5s;
+	-moz-transition: 0.5s;
+	-o-transition: 0.5s;
+	-ms-transition: 0.5s;
+	transition: 0.5s;
+}
+.sub5_box a:hover{color: #f29b22; }
+	.sub5_box a.selected {
+		color: #8b570f; 
+	}
+
+
+
+
+
+.sub5_box1{width: 98%;  height: 144px; padding-top: 65px; position: relative; text-align: center; margin: 0 auto}
+.sub5_box1>p{position: absolute; z-index: 2; left: 0; right: 0; margin: 0 auto; top: 130px; font-family: n2; font-size: 3rem; width: 340px; height: 30px; }
+.coloronly{width: 345px; height: 23px; position: absolute; margin: 0 auto; left: 0; right: 0; background: #ffd230; top: 153px}
+
+
+
+.sub5_box{ width: 98%; margin: 0 auto; margin-bottom: 150px}
+
+
+.sociales {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+	#timeline {
+		width: 550px;
+		height: 600px;
+		overflow: hidden;
+		margin: 40px auto;
+		position: relative;
+		background: url('../images/dot.gif') 3px top repeat-y;
+	}
+		#dates {
+			width: 100px;
+			height: 450px;
+			overflow: hidden;
+			float: left;
+		}
+			#dates li {
+				list-style: none;
+				width: 100px;
+				height: 100px;
+				line-height: 100px;
+				font-size: 24px;
+				padding-left: 10px;
+				background: url('../images/biggerdot.png') left center no-repeat;
+			}
+				#dates a {
+					line-height: 38px;
+					padding-bottom: 10px;
+				}
+				#dates .selected {
+			        font-size: 3rem;
+                    font-family: n2
+				}
+		
+		#issues {
+			width: 450px;
+			height: 450px;
+			overflow: hidden;
+			float: left;
+		}	
+			#issues li {
+				width: 450px;
+				height: 600px;
+				list-style: none;
+                text-align: center
+
+			}
+				#issues li img {
+                    margin-top: 30%;
+                    margin-bottom: 6%
+
+				}
+				#issues li h1 {
+					color: #000;
+					font-size: 3.5rem;
+					text-align: center;
+                    margin-bottom: 30px
+
+				}
+				#issues li p {
+					font-size: 14px;
+					margin: 10px 20px;
+					font-weight: normal;
+					line-height: 22px;
+			
+				}
+		
+		#grad_top,
+		#grad_bottom {
+			
+			height: 80px;
+			position: absolute;
+		}
+			#grad_top {
+		        top: 0;
+		        background: url('../images/grad_top.png') repeat-x;
+			}
+			#grad_bottom {
+		        bottom: 0;
+		        background: url('../images/grad_bottom.png') repeat-x;
+			}
+		
+		#next,
+		#prev {
+			position: absolute;
+			left: 55%;
+			font-size: 70px;
+			width: 38px;
+			height: 22px;
+			background-position: 0 -44px;
+			background-repeat: no-repeat;
+			text-indent: -9999px;
+			overflow: hidden;
+		}
+			#next:hover,
+			#prev:hover {
+				background-position:  0 0;
+			}
+			#next {
+				bottom: 0;
+				background-image: url('../images/next_v.png');
+			}
+			#prev {
+				top: 0;
+				background-image: url('../images/prev_v.png');
+			}
+				#next.disabled,
+				#prev.disabled {
+					opacity: 0.2;
+				}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1840,6 +2021,16 @@ footer {
         background-image: url(../img/subb_1550_1.png)
     }
 
+    
+     .submain5 {
+        width: 100%;
+        height: 0;
+        padding-top: calc(800/1550*100%);
+        background-image: url(../img/15555_01.png)
+    }
+
+    
+    
 
 
 
@@ -1940,13 +2131,28 @@ footer {
         padding-top: 50px
     }
 
+    
+    .jq1{margin: 0 auto !important;}
+    
+    
+    
     .sbox2_right > p > span {
         line-height: 70px;
         font-size: 2.3rem
     }
 
 
-
+    .sbox2_right p {padding-top: 15px}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     /*서브2*/
 
     .sub_3_box2_1_1 {
@@ -2378,6 +2584,18 @@ footer {
 
 
 
+    
+    /*서브5*/
+    
+    
+    .submain5 {
+        height: 0;
+        padding-top: calc(1190/810*100%);
+        background-image: url(../img/sub5810.png)
+    }
+
+    
+    
 
 
 }
@@ -2472,6 +2690,20 @@ footer {
         padding-top: 0;
         width: 94%
     }
+    .jq1{width: 98%  !important; margin: 0 auto}
+    .jq1{height: 110px !important;}
+    .notice_list{float: none !important;}
+    .ii{float: none !important;}
+    .ii{padding-top: 10px}
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     .sbox2_right > h2 {
         padding-bottom: 40px
@@ -2512,6 +2744,25 @@ footer {
         background-size: 100%
     }
 
+    
+    
+    
+    
+    /* 서브5*/
+    
+    
+    #timeline{width: 100%}
+
+    
+    #dates{width: 15%;}
+    
+    #issues{width: 85%}
+    
+    
+    #issues li{width: 100%}
+    
+    
+    
 
 }
 
@@ -2541,6 +2792,44 @@ footer {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 420px) {
+    
+    
+      /* 서브5*/
+    
+    
+    #timeline{width: 100%; background: none}
+
+    
+    #dates{display: none}
+    
+    #issues{width: 98%; margin: 0 auto}
+    
+    
+    #issues li{width: 100%; margin: 0 auto}
+    
+    
+    #next, #prev{left: 0; right: 0; margin: 0 auto}
+    
+    .sub5_box1 {width: 100%}
+
+    .sub5_box1>p{font-size: 2.5rem; width: 300px}
+    .coloronly{width: 290px; left: 0; right: 0; margin: 0 auto}
+    
+    
+}
+    
 
 
 
@@ -2689,10 +2978,20 @@ footer {
     .sub3_left{height: 475px}
   
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 
 }
-
-
-
 
